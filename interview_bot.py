@@ -76,14 +76,14 @@ if st.session_state.job_role == "":
     if st.session_state.job_role:
         st.session_state.chat_history = ""
         st.session_state.question_number = 1
-        st.experimental_rerun()
+        st.rerun()
 else:
     st.subheader(f"Interview Role: {st.session_state.job_role}")
 
     if st.button("🔄 Change Role"):
         st.session_state.job_role = ""
         st.session_state.chat_history = ""
-        st.experimental_rerun()
+        st.rerun()
 
     # Ask question
     if "current_question" not in st.session_state:
@@ -111,4 +111,4 @@ else:
             st.session_state.job_role,
             st.session_state.chat_history
         )
-        st.experimental_rerun()
+        st.rerun()
