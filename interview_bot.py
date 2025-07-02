@@ -1,8 +1,6 @@
 import streamlit as st
 import openai
 import os
-from dotenv import load_dotenv
-load_dotenv()
 
 # Set your OpenAI API key here
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -111,4 +109,6 @@ else:
         st.session_state.question_number += 1
         st.session_state.current_question = generate_question(
             st.session_state.job_role,
-            st.sessio
+            st.session_state.chat_history
+        )
+        st.experimental_rerun()
